@@ -1,3 +1,5 @@
-# UUID                                  	Group Name
-#
-60e2ffc86c04885a23ad7a39e35e0df54ed748f1	openstack/murano-agent-distgit-ptl
+# UUID          Group Name
+False 	Non-Interactive Users
+dc6f81ed62ad5c3e6b3e93960d941c6b19578077       	openstack/murano-agent-distgit-core
+60e2ffc86c04885a23ad7a39e35e0df54ed748f1        	openstack/murano-agent-distgit-ptl
+global:Registered-Users		Registered Users
