@@ -1,0 +1,10 @@
+compress
+
+/var/log/murano/muranoagent.log {
+    daily
+    missingok
+    compress
+    delaycompress
+    notifempty
+    copytruncate
+}

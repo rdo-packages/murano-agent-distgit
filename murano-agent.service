@@ -1,0 +1,12 @@
+[Unit]
+Description=OpenStack Murano Agent
+After=syslog.target network.target ntp.service
+
+[Service]
+User=root
+Type=simple
+ExecStart=/usr/bin/muranoagent --config-file /etc/murano-agent/muranoagent.conf  --logfile /var/log/murano-agent/muranoagent.log
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
