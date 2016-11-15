@@ -1,10 +1,9 @@
-%global milestone .0rc2
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 %global pypi_name murano-agent
 
 Name:             openstack-murano-agent
-Version:          XXX
-Release:          XXX
+Version:          3.0.0
+Release:          1%{?dist}
 Summary:          VM-side guest agent that accepts commands from Murano engine and executes them.
 License:          ASL 2.0
 URL:              http://git.openstack.org/cgit/openstack/%{pypi_name}
@@ -131,3 +130,7 @@ export PYTHONPATH="%{python2_sitearch}:%{python2_sitelib}:%{buildroot}%{python2_
 
 
 %changelog
+* Tue Nov 15 2016 Alfredo Moralejo <amoralej@redhat.com> 3.0.0-1
+- Update to 3.0.0
+
+
