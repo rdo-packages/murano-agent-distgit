@@ -13,6 +13,7 @@ Source1:          openstack-murano-agent.service
 Source2:          openstack-murano-agent.logrotate
 BuildArch:        noarch
 
+BuildRequires:    git
 BuildRequires:    python-devel
 BuildRequires:    python-pbr
 BuildRequires:    python-setuptools
@@ -62,7 +63,7 @@ Murano Agent is the VM-side guest agent that accepts commands from Murano
 engine and executes them
 
 %prep
-%setup -q -n %{pypi_name}-%{upstream_version}
+%autosetup -S git -n %{pypi_name}-%{upstream_version}
 
 # Let RPM handle the dependencies
 rm -rf {test-,}requirements.txt tools/{pip,test}-requires
