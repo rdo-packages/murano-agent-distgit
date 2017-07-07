@@ -34,7 +34,7 @@ BuildRequires:    python-mock
 BuildRequires:    python-testtools
 BuildRequires:    python-testrepository
 # doc build requirements
-BuildRequires:    python-oslo-sphinx
+BuildRequires:    python-openstackdocstheme
 BuildRequires:    python-sphinx
 BuildRequires:    python-reno
 BuildRequires:    systemd-units
@@ -76,7 +76,7 @@ PYTHONPATH=. oslo-config-generator --config-file etc/oslo-config-generator/muran
 
 # generate html docs
 export OSLO_PACKAGE_VERSION=%{upstream_version}
-%{__python2} setup.py build_sphinx
+%{__python2} setup.py build_sphinx -b html
 
 # remove the sphinx-build leftovers
 rm -rf doc/build/html/.{doctrees,buildinfo}
