@@ -132,3 +132,4 @@ export PYTHONPATH="%{python2_sitearch}:%{python2_sitelib}:%{buildroot}%{python2_
 
 
 %changelog
+# REMOVEME: error caused by commit http://git.openstack.org/cgit/openstack/murano-agent/commit/?id=34c1757f7550acf6ae1460eb28b452d21775d4c0
