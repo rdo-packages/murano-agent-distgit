@@ -101,7 +101,6 @@ install -d -m 755 %{buildroot}%{_localstatedir}/log/murano-agent
 install -d -m 755 %{buildroot}%{_sharedstatedir}/murano-agent
 
 %check
-export PYTHONPATH="%{python2_sitearch}:%{python2_sitelib}:%{buildroot}%{python2_sitelib}"
 %{__python2} setup.py testr --coverage
 
 
