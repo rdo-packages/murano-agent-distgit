@@ -28,7 +28,6 @@ BuildRequires:    python-semantic-version
 BuildRequires:    GitPython
 BuildRequires:    python-hacking
 BuildRequires:    python-unittest2
-BuildRequires:    python-coverage
 BuildRequires:    python-mock
 BuildRequires:    python-testtools
 BuildRequires:    python-testrepository
@@ -99,8 +98,7 @@ install -d -m 755 %{buildroot}%{_localstatedir}/log/murano-agent
 install -d -m 755 %{buildroot}%{_sharedstatedir}/murano-agent
 
 %check
-%{__python2} setup.py testr --coverage
-
+%{__python2} setup.py testr
 
 %post
 %systemd_post openstack-murano-agent
