@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_4420bdf7",
+        "filename": "openstack-murano-agent.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2017-08-17T15:39:58Z",
+      "side": 0,
+      "message": "We don\u0027t want to remove the execution of unit tests, could you leave %{__python2} setup.py testr",
+      "revId": "4df9a2b59007824a95f95864a0c15915ca273883",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
