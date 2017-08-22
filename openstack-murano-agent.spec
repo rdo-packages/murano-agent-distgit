@@ -1,4 +1,3 @@
-%global milestone .0rc2
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 %global pypi_name murano-agent
 
@@ -39,23 +38,22 @@ BuildRequires:    python-sphinx
 BuildRequires:    python-reno
 BuildRequires:    systemd-units
 
-Requires:         python-pbr >= 1.6
+Requires:         python-pbr >= 2.0.0
 Requires:         python-six >= 1.9.0
-Requires:         python-oslo-config >= 2:3.14.0
-Requires:         python-oslo-log >= 3.11.0
+Requires:         python-oslo-config >= 2:4.0.0
+Requires:         python-oslo-log >= 3.22.0
 Requires:         python-oslo-service >= 1.10.0
-Requires:         python-oslo-utils >= 3.16.0
+Requires:         python-oslo-utils >= 3.20.0
 Requires:         python-requests >= 2.10.0
 Requires:         python-anyjson >= 0.3.3
 Requires:         python-eventlet >= 0.18.2
 Requires:         GitPython >= 1.0.1
-Requires:         PyYAML >= 3.1.0
+Requires:         PyYAML >= 3.10
 Requires:         python-semantic-version
-Requires:         python-kombu >= 3.0.25
+Requires:         python-kombu >= 1:4.0.0
 Requires(post):   systemd
 Requires(preun):  systemd
 Requires(postun): systemd
-
 
 
 %description
