@@ -51,10 +51,7 @@ Requires:         GitPython >= 1.0.1
 Requires:         PyYAML >= 3.10
 Requires:         python-semantic-version
 Requires:         python-kombu >= 1:4.0.0
-Requires(post):   systemd
-Requires(preun):  systemd
-Requires(postun): systemd
-
+%{?systemd_requires}
 
 %description
 Murano Agent is the VM-side guest agent that accepts commands from Murano
