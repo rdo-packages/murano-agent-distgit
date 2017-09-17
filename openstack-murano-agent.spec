@@ -36,6 +36,7 @@ BuildRequires:    python-openstackdocstheme
 BuildRequires:    python-sphinx
 BuildRequires:    python-reno
 BuildRequires:    systemd-units
+BuildRequires:    openstack-macros
 
 Requires:         python-pbr >= 2.0.0
 Requires:         python-six >= 1.9.0
@@ -63,7 +64,7 @@ engine and executes them
 %autosetup -S git -n %{pypi_name}-%{upstream_version}
 
 # Let RPM handle the dependencies
-rm -rf {test-,}requirements.txt tools/{pip,test}-requires
+%py_req_cleanup
 
 %build
 %py2_build
