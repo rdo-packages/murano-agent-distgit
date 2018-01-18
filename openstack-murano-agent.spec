@@ -125,3 +125,4 @@ install -d -m 755 %{buildroot}%{_sharedstatedir}/murano-agent
 
 
 %changelog
+# REMOVEME: error caused by commit http://git.openstack.org/cgit/openstack/murano-agent/commit/?id=5fcb8f5d43b2deb5f24d4f67605cc0c0956ab430
