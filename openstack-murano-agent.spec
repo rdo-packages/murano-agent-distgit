@@ -13,44 +13,45 @@ Source2:          openstack-murano-agent.logrotate
 BuildArch:        noarch
 
 BuildRequires:    git
-BuildRequires:    python-devel
-BuildRequires:    python-pbr
-BuildRequires:    python-setuptools
-BuildRequires:    python-sphinx
-BuildRequires:    python-oslo-config
-BuildRequires:    python-oslo-log
-BuildRequires:    python-oslo-service
-BuildRequires:    python-oslo-utils
+BuildRequires:    python2-devel
+BuildRequires:    python2-pbr
+BuildRequires:    python2-setuptools
+BuildRequires:    python2-sphinx
+BuildRequires:    python2-oslo-config
+BuildRequires:    python2-oslo-log
+BuildRequires:    python2-oslo-service
+BuildRequires:    python2-oslo-utils
 # test requirements
-BuildRequires:    python-kombu
+BuildRequires:    python2-kombu
 BuildRequires:    python-anyjson
 BuildRequires:    python-semantic-version
 BuildRequires:    GitPython
-BuildRequires:    python-hacking
+BuildRequires:    python2-hacking
 BuildRequires:    python-unittest2
-BuildRequires:    python-mock
-BuildRequires:    python-testtools
-BuildRequires:    python-testrepository
+BuildRequires:    python2-mock
+BuildRequires:    python2-testtools
+BuildRequires:    python2-testrepository
 # doc build requirements
-BuildRequires:    python-openstackdocstheme
-BuildRequires:    python-sphinx
-BuildRequires:    python-reno
+BuildRequires:    python2-openstackdocstheme
+BuildRequires:    python2-sphinx
+BuildRequires:    python2-reno
 BuildRequires:    systemd-units
 BuildRequires:    openstack-macros
 
-Requires:         python-pbr >= 2.0.0
-Requires:         python-six >= 1.9.0
-Requires:         python-oslo-config >= 2:4.0.0
-Requires:         python-oslo-log >= 3.22.0
-Requires:         python-oslo-service >= 1.10.0
-Requires:         python-oslo-utils >= 3.20.0
-Requires:         python-requests >= 2.10.0
+Requires:         python2-pbr >= 2.0.0
+Requires:         python2-six >= 1.10.0
+Requires:         python2-oslo-config >= 2:5.1.0
+Requires:         python2-oslo-log >= 3.36.0
+Requires:         python2-oslo-service >= 1.24.0
+Requires:         python2-oslo-utils >= 3.33.0
+Requires:         python2-requests >= 2.14.2
 Requires:         python-anyjson >= 0.3.3
-Requires:         python-eventlet >= 0.18.2
+Requires:         python2-eventlet >= 0.18.2
 Requires:         GitPython >= 1.0.1
 Requires:         PyYAML >= 3.10
 Requires:         python-semantic-version
-Requires:         python-kombu >= 1:4.0.0
+Requires:         python2-kombu >= 1:4.0.0
+Requires:         python2-cryptography >= 1.7.2
 %{?systemd_requires}
 
 %description
