@@ -30,7 +30,7 @@ BuildRequires:    python2-hacking
 BuildRequires:    python-unittest2
 BuildRequires:    python2-mock
 BuildRequires:    python2-testtools
-BuildRequires:    python2-testrepository
+BuildRequires:    python2-stestr
 # doc build requirements
 BuildRequires:    python2-openstackdocstheme
 BuildRequires:    python2-sphinx
@@ -97,7 +97,7 @@ install -d -m 755 %{buildroot}%{_localstatedir}/log/murano-agent
 install -d -m 755 %{buildroot}%{_sharedstatedir}/murano-agent
 
 %check
-%{__python2} setup.py testr
+%{__python2} setup.py test
 
 %post
 %systemd_post openstack-murano-agent
