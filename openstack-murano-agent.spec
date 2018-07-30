@@ -74,7 +74,7 @@ PYTHONPATH=. oslo-config-generator --config-file etc/oslo-config-generator/muran
 
 # generate html docs
 export OSLO_PACKAGE_VERSION=%{upstream_version}
-%{__python2} setup.py build_sphinx -b html
+sphinx-build -W -b html doc/source doc/build/html
 
 # remove the sphinx-build leftovers
 rm -rf doc/build/html/.{doctrees,buildinfo}
