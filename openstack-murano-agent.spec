@@ -30,8 +30,6 @@ BuildRequires:    python2-hacking
 BuildRequires:    python-unittest2
 BuildRequires:    python2-mock
 BuildRequires:    python2-testtools
-# FIXME(ykarel) Remove testrepository BR once https://bugs.launchpad.net/murano/+bug/1781860 is fixed
-BuildRequires:    python2-testrepository
 BuildRequires:    python2-stestr
 # doc build requirements
 BuildRequires:    python2-openstackdocstheme
