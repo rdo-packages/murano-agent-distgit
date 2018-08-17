@@ -38,20 +38,20 @@ BuildRequires:    python2-reno
 BuildRequires:    systemd-units
 BuildRequires:    openstack-macros
 
-Requires:         python2-pbr >= 2.0.0
-Requires:         python2-six >= 1.10.0
-Requires:         python2-oslo-config >= 2:5.1.0
-Requires:         python2-oslo-log >= 3.36.0
-Requires:         python2-oslo-service >= 1.24.0
-Requires:         python2-oslo-utils >= 3.33.0
-Requires:         python2-requests >= 2.14.2
+Requires:         python2-pbr >= 3.1.1
+Requires:         python2-six >= 1.11.0
+Requires:         python2-oslo-config >= 2:5.2.0
+Requires:         python2-oslo-log >= 3.37.0
+Requires:         python2-oslo-service >= 1.30.0
+Requires:         python2-oslo-utils >= 3.36.0
+Requires:         python2-requests >= 2.18.4
 Requires:         python-anyjson >= 0.3.3
 Requires:         python2-eventlet >= 0.18.2
 Requires:         GitPython >= 1.0.1
 Requires:         PyYAML >= 3.10
 Requires:         python-semantic-version
-Requires:         python2-kombu >= 1:4.0.0
-Requires:         python2-cryptography >= 1.7.2
+Requires:         python2-kombu >= 1:4.1.0
+Requires:         python2-cryptography >= 2.1.4
 %{?systemd_requires}
 
 %description
