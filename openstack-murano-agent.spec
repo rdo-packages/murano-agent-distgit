@@ -2,8 +2,8 @@
 %global pypi_name murano-agent
 
 Name:             openstack-murano-agent
-Version:          XXX
-Release:          XXX
+Version:          3.5.1
+Release:          1%{?dist}
 Summary:          VM-side guest agent that accepts commands from Murano engine and executes them.
 License:          ASL 2.0
 URL:              http://git.openstack.org/cgit/openstack/%{pypi_name}
@@ -72,7 +72,8 @@ PYTHONPATH=. oslo-config-generator --config-file etc/oslo-config-generator/muran
 
 # generate html docs
 export OSLO_PACKAGE_VERSION=%{upstream_version}
-sphinx-build -W -b html doc/source doc/build/html
+# FIXME(ykarel) disable warning-is-error until https://review.openstack.org/#/c/589141/ is in released tag
+sphinx-build -b html doc/source doc/build/html
 
 # remove the sphinx-build leftovers
 rm -rf doc/build/html/.{doctrees,buildinfo}
@@ -126,3 +127,6 @@ install -d -m 755 %{buildroot}%{_sharedstatedir}/murano-agent
 
 
 %changelog
+* Mon Aug 20 2018 RDO <dev@lists.rdoproject.org> 3.5.1-1
+- Update to 3.5.1
+
