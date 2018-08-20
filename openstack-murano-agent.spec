@@ -2,8 +2,8 @@
 %global pypi_name murano-agent
 
 Name:             openstack-murano-agent
-Version:          XXX
-Release:          XXX
+Version:          3.5.1
+Release:          1%{?dist}
 Summary:          VM-side guest agent that accepts commands from Murano engine and executes them.
 License:          ASL 2.0
 URL:              http://git.openstack.org/cgit/openstack/%{pypi_name}
@@ -30,6 +30,8 @@ BuildRequires:    python2-hacking
 BuildRequires:    python-unittest2
 BuildRequires:    python2-mock
 BuildRequires:    python2-testtools
+# FIXME(ykarel) Remove testrepository BR once https://review.openstack.org/#/c/589141/ is in released tag
+BuildRequires:    python2-testrepository
 BuildRequires:    python2-stestr
 # doc build requirements
 BuildRequires:    python2-openstackdocstheme
@@ -126,3 +128,6 @@ install -d -m 755 %{buildroot}%{_sharedstatedir}/murano-agent
 
 
 %changelog
+* Mon Aug 20 2018 RDO <dev@lists.rdoproject.org> 3.5.1-1
+- Update to 3.5.1
+
