@@ -1,9 +1,12 @@
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 %global pypi_name murano-agent
 
+%{?dlrn: %global  with_doc 1}
+%{!?dlrn: %global with_doc 0}
+
 Name:             openstack-murano-agent
-Version:          XXX
-Release:          XXX
+Version:          3.5.1
+Release:          1%{?dist}
 Summary:          VM-side guest agent that accepts commands from Murano engine and executes them.
 License:          ASL 2.0
 URL:              http://git.openstack.org/cgit/openstack/%{pypi_name}
@@ -32,8 +35,10 @@ BuildRequires:    python2-mock
 BuildRequires:    python2-testtools
 BuildRequires:    python2-stestr
 # doc build requirements
+%if 0%{?with_doc}
 BuildRequires:    python2-openstackdocstheme
 BuildRequires:    python2-sphinx
+%endif
 BuildRequires:    python2-reno
 BuildRequires:    systemd-units
 BuildRequires:    openstack-macros
@@ -72,10 +77,12 @@ PYTHONPATH=. oslo-config-generator --config-file etc/oslo-config-generator/muran
 
 # generate html docs
 export OSLO_PACKAGE_VERSION=%{upstream_version}
-sphinx-build -W -b html doc/source doc/build/html
+%if 0%{?with_doc}
+sphinx-build -b html doc/source doc/build/html
 
 # remove the sphinx-build leftovers
 rm -rf doc/build/html/.{doctrees,buildinfo}
+%endif
 
 
 %install
@@ -113,7 +120,9 @@ install -d -m 755 %{buildroot}%{_sharedstatedir}/murano-agent
 %files
 %license LICENSE
 %doc README.rst
+%if 0%{?with_doc}
 %doc doc/build/html
+%endif
 %defattr(-,root,root)
 %config(noreplace) %{_sysconfdir}/logrotate.d/murano-agent
 %config(noreplace) %{_sysconfdir}/murano-agent/muranoagent.conf
@@ -126,3 +135,6 @@ install -d -m 755 %{buildroot}%{_sharedstatedir}/murano-agent
 
 
 %changelog
+* Mon Aug 20 2018 RDO <dev@lists.rdoproject.org> 3.5.1-1
+- Update to 3.5.1
+
