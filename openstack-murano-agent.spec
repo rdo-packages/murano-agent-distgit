@@ -64,7 +64,7 @@ Requires:         python%{pyver}-oslo-log >= 3.37.0
 Requires:         python%{pyver}-oslo-service >= 1.30.0
 Requires:         python%{pyver}-oslo-utils >= 3.36.0
 Requires:         python%{pyver}-requests >= 2.18.4
-Requires:         python%{pyver}-eventlet >= 0.18.2
+Requires:         python%{pyver}-eventlet >= 0.20.0
 Requires:         python%{pyver}-kombu >= 1:4.1.0
 Requires:         python%{pyver}-cryptography >= 2.1.4
 
