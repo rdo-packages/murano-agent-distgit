@@ -2,7 +2,7 @@
 %global pypi_name murano-agent
 
 Name:             openstack-murano-agent
-Version:          3.3.0
+Version:          3.3.1
 Release:          1%{?dist}
 Summary:          VM-side guest agent that accepts commands from Murano engine and executes them.
 License:          ASL 2.0
@@ -129,6 +129,9 @@ install -d -m 755 %{buildroot}%{_sharedstatedir}/murano-agent
 
 
 %changelog
+* Wed Apr 17 2019 RDO <dev@lists.rdoproject.org> 3.3.1-1
+- Update to 3.3.1
+
 * Thu Aug 24 2017 Alfredo Moralejo <amoralej@redhat.com> 3.3.0-1
 - Update to 3.3.0
 
