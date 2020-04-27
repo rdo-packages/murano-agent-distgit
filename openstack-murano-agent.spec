@@ -1,14 +1,3 @@
-# Macros for py2/py3 compatibility
-%if 0%{?fedora} || 0%{?rhel} > 7
-%global pyver %{python3_pkgversion}
-%else
-%global pyver 2
-%endif
-%global pyver_bin python%{pyver}
-%global pyver_sitelib %python%{pyver}_sitelib
-%global pyver_install %py%{pyver}_install
-%global pyver_build %py%{pyver}_build
-# End of macros for py2/py3 compatibility
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 %global pypi_name murano-agent
 
@@ -24,62 +13,46 @@ Source2:          openstack-murano-agent.logrotate
 BuildArch:        noarch
 
 BuildRequires:    git
-BuildRequires:    python%{pyver}-devel
-BuildRequires:    python%{pyver}-pbr
-BuildRequires:    python%{pyver}-setuptools
-BuildRequires:    python%{pyver}-sphinx
-BuildRequires:    python%{pyver}-oslo-config
-BuildRequires:    python%{pyver}-oslo-log
-BuildRequires:    python%{pyver}-oslo-service
-BuildRequires:    python%{pyver}-oslo-utils
+BuildRequires:    python3-devel
+BuildRequires:    python3-pbr
+BuildRequires:    python3-setuptools
+BuildRequires:    python3-sphinx
+BuildRequires:    python3-oslo-config
+BuildRequires:    python3-oslo-log
+BuildRequires:    python3-oslo-service
+BuildRequires:    python3-oslo-utils
 # test requirements
-BuildRequires:    python%{pyver}-kombu
-BuildRequires:    python%{pyver}-hacking
-BuildRequires:    python%{pyver}-unittest2
-BuildRequires:    python%{pyver}-mock
-BuildRequires:    python%{pyver}-testtools
-BuildRequires:    python%{pyver}-stestr
+BuildRequires:    python3-kombu
+BuildRequires:    python3-hacking
+BuildRequires:    python3-unittest2
+BuildRequires:    python3-mock
+BuildRequires:    python3-testtools
+BuildRequires:    python3-stestr
 # doc build requirements
-BuildRequires:    python%{pyver}-openstackdocstheme
-BuildRequires:    python%{pyver}-sphinx
-BuildRequires:    python%{pyver}-reno
+BuildRequires:    python3-openstackdocstheme
+BuildRequires:    python3-sphinx
+BuildRequires:    python3-reno
 BuildRequires:    systemd-units
 BuildRequires:    openstack-macros
 
-# Handle python2 exception
-%if %{pyver} == 2
-BuildRequires:    python-anyjson
-BuildRequires:    GitPython
-BuildRequires:    python-semantic_version
-%else
-BuildRequires:    python%{pyver}-anyjson
-BuildRequires:    python%{pyver}-GitPython
-BuildRequires:    python%{pyver}-semantic_version
-%endif
+BuildRequires:    python3-anyjson
+BuildRequires:    python3-GitPython
+BuildRequires:    python3-semantic_version
 
-Requires:         python%{pyver}-pbr >= 3.1.1
-Requires:         python%{pyver}-six >= 1.11.0
-Requires:         python%{pyver}-oslo-config >= 2:5.2.0
-Requires:         python%{pyver}-oslo-log >= 3.37.0
-Requires:         python%{pyver}-oslo-service >= 1.30.0
-Requires:         python%{pyver}-oslo-utils >= 3.36.0
-Requires:         python%{pyver}-requests >= 2.18.4
-Requires:         python%{pyver}-eventlet >= 0.20.0
-Requires:         python%{pyver}-kombu >= 1:4.1.0
-Requires:         python%{pyver}-cryptography >= 2.1.4
+Requires:         python3-pbr >= 3.1.1
+Requires:         python3-oslo-config >= 2:5.2.0
+Requires:         python3-oslo-log >= 3.37.0
+Requires:         python3-oslo-service >= 1.30.0
+Requires:         python3-oslo-utils >= 3.36.0
+Requires:         python3-requests >= 2.18.4
+Requires:         python3-eventlet >= 0.20.0
+Requires:         python3-kombu >= 1:4.1.0
+Requires:         python3-cryptography >= 2.1.4
 
-# Handle python2 exception
-%if %{pyver} == 2
-Requires:         python-anyjson >= 0.3.3
-Requires:         PyYAML >= 3.10
-Requires:         GitPython >= 1.0.1
-Requires:         python-semantic_version
-%else
-Requires:         python%{pyver}-anyjson >= 0.3.3
-Requires:         python%{pyver}-PyYAML >= 3.10
-Requires:         python%{pyver}-GitPython >= 1.0.1
-Requires:         python%{pyver}-semantic_version
-%endif
+Requires:         python3-anyjson >= 0.3.3
+Requires:         python3-PyYAML >= 3.10
+Requires:         python3-GitPython >= 1.0.1
+Requires:         python3-semantic_version
 
 %{?systemd_requires}
 
@@ -94,21 +67,21 @@ engine and executes them
 %py_req_cleanup
 
 %build
-%{pyver_build}
+%{py3_build}
 
 # Generate configuration files
-PYTHONPATH=. oslo-config-generator-%{pyver} --config-file etc/oslo-config-generator/muranoagent.conf
+PYTHONPATH=. oslo-config-generator --config-file etc/oslo-config-generator/muranoagent.conf
 
 # generate html docs
 export OSLO_PACKAGE_VERSION=%{upstream_version}
-sphinx-build-%{pyver} -W -b html doc/source doc/build/html
+sphinx-build -W -b html doc/source doc/build/html
 
-# remove the sphinx-build-%{pyver} leftovers
+# remove the sphinx-build leftovers
 rm -rf doc/build/html/.{doctrees,buildinfo}
 
 
 %install
-%{pyver_install}
+%{py3_install}
 
 # Install conf file
 install -p -D -m 644 etc/muranoagent/muranoagent.conf.sample %{buildroot}%{_sysconfdir}/murano-agent/muranoagent.conf
@@ -126,7 +99,7 @@ install -d -m 755 %{buildroot}%{_localstatedir}/log/murano-agent
 install -d -m 755 %{buildroot}%{_sharedstatedir}/murano-agent
 
 %check
-%{pyver_bin} setup.py test
+%{__python3} setup.py test
 
 %post
 %systemd_post openstack-murano-agent
@@ -150,8 +123,8 @@ install -d -m 755 %{buildroot}%{_sharedstatedir}/murano-agent
 %{_unitdir}/openstack-murano-agent.service
 %dir %{_localstatedir}/log/murano-agent
 %dir %{_sharedstatedir}/murano-agent
-%{pyver_sitelib}/muranoagent
-%{pyver_sitelib}/murano_agent-*.egg-info
+%{python3_sitelib}/muranoagent
+%{python3_sitelib}/murano_agent-*.egg-info
 
 
 %changelog
