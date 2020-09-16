@@ -46,7 +46,7 @@ Requires:         python3-oslo-service >= 1.30.0
 Requires:         python3-oslo-utils >= 3.36.0
 Requires:         python3-requests >= 2.18.4
 Requires:         python3-eventlet >= 0.20.0
-Requires:         python3-kombu >= 1:4.1.0
+Requires:         python3-kombu >= 1:4.3.0
 Requires:         python3-cryptography >= 2.1.4
 
 Requires:         python3-anyjson >= 0.3.3
