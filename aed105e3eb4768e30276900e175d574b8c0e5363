@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "24d9e9f7_3764f914",
+        "filename": "openstack-murano-agent.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2020-09-17T09:01:25Z",
+      "side": 1,
+      "message": "missing epoch, should be 1:4.3.0",
+      "range": {
+        "startLine": 49,
+        "startChar": 35,
+        "endLine": 49,
+        "endChar": 40
+      },
+      "revId": "aed105e3eb4768e30276900e175d574b8c0e5363",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
