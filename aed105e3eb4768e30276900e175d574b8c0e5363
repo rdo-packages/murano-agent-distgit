@@ -22,6 +22,30 @@
       "revId": "aed105e3eb4768e30276900e175d574b8c0e5363",
       "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0f39b175_bc8fe822",
+        "filename": "openstack-murano-agent.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 635
+      },
+      "writtenOn": "2020-09-17T11:59:09Z",
+      "side": 1,
+      "message": "why do we need to explicitly set epoch here ?",
+      "parentUuid": "24d9e9f7_3764f914",
+      "range": {
+        "startLine": 49,
+        "startChar": 35,
+        "endLine": 49,
+        "endChar": 40
+      },
+      "revId": "aed105e3eb4768e30276900e175d574b8c0e5363",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
     }
   ]
 }
