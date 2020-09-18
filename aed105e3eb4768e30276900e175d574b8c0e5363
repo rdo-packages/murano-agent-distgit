@@ -46,6 +46,30 @@
       "revId": "aed105e3eb4768e30276900e175d574b8c0e5363",
       "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "67b763df_671fc741",
+        "filename": "openstack-murano-agent.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2020-09-18T06:34:47Z",
+      "side": 1,
+      "message": "epoch has precedence over version and release and default epoch is 0. That means that 4.3.0 is 0:4.3.0 and 1:4.1.0 \u003e 4.3.0 so this change is specifying a older release, not a newer one.",
+      "parentUuid": "0f39b175_bc8fe822",
+      "range": {
+        "startLine": 49,
+        "startChar": 35,
+        "endLine": 49,
+        "endChar": 40
+      },
+      "revId": "aed105e3eb4768e30276900e175d574b8c0e5363",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
     }
   ]
 }
