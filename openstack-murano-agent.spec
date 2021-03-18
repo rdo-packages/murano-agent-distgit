@@ -62,9 +62,9 @@ Requires:         python3-kombu >= 1:4.3.0
 Requires:         python3-cryptography >= 2.1.4
 
 Requires:         python3-anyjson >= 0.3.3
-Requires:         python3-PyYAML >= 3.10
+Requires:         python3-yaml >= 3.13
 Requires:         python3-GitPython >= 1.0.1
-Requires:         python3-semantic_version
+Requires:         python3-semantic_version >= 2.6.0
 
 %{?systemd_requires}
 
