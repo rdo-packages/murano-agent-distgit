@@ -38,7 +38,6 @@ BuildRequires:    python3-oslo-utils
 # test requirements
 BuildRequires:    python3-kombu
 BuildRequires:    python3-hacking
-BuildRequires:    python3-unittest2
 BuildRequires:    python3-mock
 BuildRequires:    python3-testtools
 BuildRequires:    python3-stestr
