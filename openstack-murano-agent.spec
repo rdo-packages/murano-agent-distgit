@@ -50,15 +50,15 @@ BuildRequires:    python3-anyjson
 BuildRequires:    python3-GitPython
 BuildRequires:    python3-semantic_version
 
-Requires:         python3-pbr >= 3.1.1
+Requires:         python3-pbr >= 5.5.1
 Requires:         python3-oslo-config >= 2:5.2.0
-Requires:         python3-oslo-log >= 3.37.0
-Requires:         python3-oslo-service >= 1.30.0
-Requires:         python3-oslo-utils >= 3.36.0
-Requires:         python3-requests >= 2.18.4
-Requires:         python3-eventlet >= 0.20.0
+Requires:         python3-oslo-log >= 4.4.0
+Requires:         python3-oslo-service >= 2.5.0
+Requires:         python3-oslo-utils >= 4.8.0
+Requires:         python3-requests >= 2.25.1
+Requires:         python3-eventlet >= 0.30.1
 Requires:         python3-kombu >= 1:4.3.0
-Requires:         python3-cryptography >= 2.1.4
+Requires:         python3-cryptography >= 2.7
 
 Requires:         python3-anyjson >= 0.3.3
 Requires:         python3-yaml >= 3.13
