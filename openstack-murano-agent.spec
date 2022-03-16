@@ -57,11 +57,11 @@ Requires:         python3-oslo-service >= 2.5.0
 Requires:         python3-oslo-utils >= 4.8.0
 Requires:         python3-requests >= 2.25.1
 Requires:         python3-eventlet >= 0.30.1
-Requires:         python3-kombu >= 1:4.3.0
+Requires:         python3-kombu >= 1:4.6.1
 Requires:         python3-cryptography >= 2.7
 
 Requires:         python3-anyjson >= 0.3.3
-Requires:         python3-yaml >= 3.13
+Requires:         python3-yaml >= 5.1
 Requires:         python3-GitPython >= 1.0.1
 Requires:         python3-semantic_version >= 2.6.0
 
