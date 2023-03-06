@@ -46,7 +46,6 @@ BuildRequires:    python3-reno
 BuildRequires:    systemd-units
 BuildRequires:    openstack-macros
 
-BuildRequires:    python3-anyjson
 BuildRequires:    python3-GitPython
 BuildRequires:    python3-semantic_version
 
@@ -60,7 +59,6 @@ Requires:         python3-eventlet >= 0.30.1
 Requires:         python3-kombu >= 1:4.6.1
 Requires:         python3-cryptography >= 2.7
 
-Requires:         python3-anyjson >= 0.3.3
 Requires:         python3-yaml >= 5.1
 Requires:         python3-GitPython >= 3.0.5
 Requires:         python3-semantic_version >= 2.6.0
